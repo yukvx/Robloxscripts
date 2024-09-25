@@ -22,8 +22,8 @@ local function loadDex()
     loadstring(b)()
 end
 
--- Return both functions for external use
-return {
-    loadHy = loadHy,
-    loadDex = loadDex
-}
+--[[
+    Its Ai Carti guys!!!
+    loadDex()
+    loadHy()
+]]
