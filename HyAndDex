@@ -1,19 +1,28 @@
--- partialy minified cs why not?
+--[[ 
+Partialy minified cus why not? 
+whoops! I fucked up LOL
+[[
+
 local function loadHy()
-local owner = "Upbolt"
-local branch = "revision"
-local function b(file)
-local url = ("https://raw.githubusercontent.com/%s/Hydroxide/%s/%s.lua"):format(owner, branch, file)
-local scriptContent = game:HttpGet(url)
-return loadstring(scriptContent, file..'.lua')()
+    local owner = "Upbolt"
+    local branch = "revision"
+    local function b(file)
+        local url = ("https://raw.githubusercontent.com/%s/Hydroxide/%s/%s.lua"):format(owner, branch, file)
+        local scriptContent = game:HttpGet(url)
+        return loadstring(scriptContent, file..'.lua')()
+    end
+    b("init")
+    b("ui/main")
 end
-b("init")
-b("ui/main")
-end
+
 local function loadDex()
-local a="https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua"local b=game:HttpGet(a,true)loadstring(b)()
+    local a = "https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua"
+    local b = game:HttpGet(a, true)
+    loadstring(b)()
 end
---[[ init both scripts 
-loadHy()
-loadDex()
-]]
+
+-- Return both functions for external use
+return {
+    loadHy = loadHy,
+    loadDex = loadDex
+}
